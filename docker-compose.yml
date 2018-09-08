@@ -1,0 +1,18 @@
+version: '3'
+services:
+    ubuntu:
+        build:
+            context: docker/build/
+        volumes:
+            - ./docker/config/nginx/nginx.conf:/etc/nginx/nginx.conf
+        expose:
+          - 80
+        networks:
+            self:
+                ipv4_address: ${NGINX_HOST}
+networks:
+    self:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: ${NETWORK_SUBNET}
