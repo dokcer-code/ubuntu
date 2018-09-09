@@ -12,5 +12,11 @@ RUN apt-get update && apt-get install -y nginx
 
 # php
 RUN apt-get install -y  php7.2-cli php7.2-fpm php7.2-mysql php7.2-gd php7.2-mbstring php7.2-xml php7.2-zip
+RUN mkdir /run/php
 
-CMD nginx
+# supervisor
+RUN apt-get install -y supervisor
+RUN mkdir -p /var/log/superviso
+RUN mkdir -p /var/log/supervisor
+
+CMD ["/usr/bin/supervisord", "-n"]
