@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && apt-get install -y curl gnupg less
+RUN apt-get update && apt-get install -y curl gnupg less nano
 
 RUN useradd -ms /bin/bash -U www
 
