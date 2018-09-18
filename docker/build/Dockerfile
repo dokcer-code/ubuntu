@@ -20,7 +20,8 @@ RUN mkdir /run/php
 
 # supervisor
 RUN apt-get install -y supervisor
-RUN mkdir -p /var/log/superviso
 RUN mkdir -p /var/log/supervisor
+
+WORKDIR /var/www/html
 
 CMD ["/usr/bin/supervisord", "-n"]
