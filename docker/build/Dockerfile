@@ -2,9 +2,10 @@ FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && apt-get install -y curl gnupg less nano
+RUN apt-get update && apt-get install -y software-properties-common curl gnupg less nano
 
 RUN useradd -ms /bin/bash -U www
+RUN mkdir /home/www/bin
 
 # nginx
 RUN curl http://nginx.org/keys/nginx_signing.key | apt-key add -

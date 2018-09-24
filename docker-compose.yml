@@ -17,6 +17,7 @@ services:
             - 80
         links:
           - mysql
+          - firefox
         networks:
             self:
                 ipv4_address: ${NGINX_HOST}
@@ -32,6 +33,15 @@ services:
         networks:
             self:
                 ipv4_address: ${MYSQL_HOST}
+    firefox:
+        image: selenium/standalone-firefox:3.14.0
+        volumes:
+            - /dev/shm:/dev/shm
+        ports:
+            - "4444:4444"
+        networks:
+            self:
+                ipv4_address: 172.73.254.4
 networks:
     self:
         driver: bridge

@@ -2,8 +2,9 @@ class_name: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: http://127.0.0.1:8080/
+            url: http://ubuntu.loc
             browser: firefox
+            host: 172.73.254.4
         - Yii2:
             part: orm
             entryScript: index-test.php
