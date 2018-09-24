@@ -1,4 +1,0 @@
-
-echo test
-history
-exit
