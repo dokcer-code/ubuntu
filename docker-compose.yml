@@ -29,7 +29,8 @@ services:
             MYSQL_DATABASE: ${MYSQL_DATABASE}
             MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD_ROOT}
         volumes:
-        - ./docker/server/mysql:/var/lib/mysql
+            - ./docker/server/mysql:/var/lib/mysql
+            - ./docker/config/mysql/conf.d:/etc/mysql/conf.d
         networks:
             self:
                 ipv4_address: ${MYSQL_HOST}
