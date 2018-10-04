@@ -9,7 +9,7 @@ services:
             - ./docker/config/supervisor/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
             - ./docker/config/nginx/conf.d:/etc/nginx/conf.d
             - ./docker/config/home/www/.bashrc:/home/www/.bashrc
-            # - ./docker/config/home/www/.bash_history:/home/www/.bash_history
+            - ./docker/config/home/www/history:/home/www/history
             - ./docker/server/nginx:/var/html/log
             - ./docker/server/supervisor:/var/log/supervisor
             - ./app:/var/www/html
